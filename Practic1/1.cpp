@@ -1,8 +1,12 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
-    setlocale(0, " ");
-    cout<<"Никита\n"<<endl;
+    setlocale(LC_ALL, "");    
+    string name;
+    cout<<"Введите ваше имя "<<endl;
+    cin>>name;
+    cout<<name<<endl;
     return 0;
 }
