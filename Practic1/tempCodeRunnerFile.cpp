@@ -19,12 +19,7 @@ int main()
         double x1 = (-b + sqrt(D))/(2*a);
         double x2 = (-b - sqrt(D))/(2*a);
         cout<<"Два различных корня\n"<<"x1 = "<<x1<<"\n"<<"x2 = "<<x2<<endl;
-        //printf("x1 = %.2f, x2 = %.2f", x1, x2);
-    }
-    else if (a != 0 and c != 0){
-        double x1 = (-b + sqrt(D))/(2*a);
-        double x2 = (-b - sqrt(D))/(2*a);
-        cout<<"Два различных корня\n"<<"x1 = "<<x1<<"\n"<<"x2 = "<<x2<<endl;
+        printf("x1 = %.2f, x2 = %.2f", x1, x2);
     }
     else if (a == 0 and b != 0){
         double x = -c/b;
