@@ -10,7 +10,7 @@ int main(){
     for(int i = 0; i < sz; ++i){
         int pos = i;
         for(int j = i+i; j < sz; ++j){
-            if (int(abc[i]) >= int(abc[j]))
+            if (int(abc[pos]) >= int(abc[j]))
                 pos = j;
         }
         if (pos != i){

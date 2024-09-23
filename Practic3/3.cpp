@@ -1,13 +1,14 @@
 #include <iostream>
 #include <fstream>
 int main(){
-    char abc[] = "Hello, world!";
+    /*char abc[] = "Hello, world!";
     std::ofstream fout("3.txt");
     fout<<abc<<std::endl;
-    fout.close();
+    fout.close();*/
     std::ifstream fin("3.txt");
-    char buff[100];
-    fin.getline(buff, 100);
+    std::string buff;
+    while(std::getline(fin, buff))
+        std::cout<<buff<<std::endl;
     fin.close();
     std::cout<<buff;
     return 0;

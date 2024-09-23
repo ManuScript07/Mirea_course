@@ -16,7 +16,7 @@ int main(){
     for(int p = 1; p <= 100; ++p){
         double r = double(p)/100;
         double m0 = (s*r*pow(1+r, n))/(12*(pow(1+r, n) - 1));
-        if (abs(m - m0) < 0.001){
+        if (abs(m - m0) < 0.0001){
             std::cout<<"p = "<<p;
             break;
         }
