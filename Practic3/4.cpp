@@ -4,25 +4,29 @@
 using namespace std;
 
 int main(){
-    char abc[] = "JHJ767Gs23SJ2223fsdsf!03()792n2j49";
+    char abc[] = "JHJ767Gs23SJ2223fsdsf!03()792n2j49\nffsdeEEGR543345353\nnDGSDG232";
     const int size = sizeof(abc)/sizeof(char);
     ofstream fout("4.txt");
     fout<<abc<<"\n";
     fout.close();
     ifstream fin("4.txt");
-    char buff[size];
-    fin.getline(buff, size);
-    fin.close();
+    
+    string line;
     bool f = false;
-    for(int i = 0; i < size; ++i){
-        if (48 <= int(buff[i]) and int(buff[i]) <= 58){
-            cout<<buff[i];
-            f = true;
+    while (getline(fin, line)){
+        int len = line.length();
+        for(int i = 0; i < len; ++i){
+            if (48 <= int(line[i]) and int(line[i]) <= 58){
+                cout<<line[i];
+                f = true;
+            }
+            else if (f == true){
+                cout<<" ";
+                f = false;
+            }
         }
-        else if (f == true){
-            cout<<" ";
-            f = false;
-        }
+        cout<<'\n';
+        f = false;
     }
     return 0;
 }

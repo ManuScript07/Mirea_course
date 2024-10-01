@@ -2,7 +2,8 @@
 #include <math.h>
 
 int main(){
-    double s, m, n, eps=1.; 
+    double s, m, n;
+    long double eps = 0.0001; 
     std::cout<<"s = ";
     std::cin>>s;
     std::cout<<"m = ";
@@ -13,14 +14,17 @@ int main(){
         std::cout<<"The values must be positive";
         return 0;
     }
-    for(int p = 1; p <= 100; ++p){
-        double r = double(p)/100;
-        double m0 = (s*r*pow(1+r, n))/(12*(pow(1+r, n) - 1));
-        if (abs(m - m0) < 0.0001){
-            std::cout<<"p = "<<p;
+    double max_p = 0;
+    for(double p = 1.; p <= 100; p +=0.0001){
+        long double r = p/100;
+        long double m0 = (s*r*pow(1+r, n))/(12*(pow(1+r, n) - 1));
+        if (m0 > m){
             break;
         }
+        else
+            max_p = p;
     }
+    std::cout<<"p = "<<max_p;
     return 0;
 
 

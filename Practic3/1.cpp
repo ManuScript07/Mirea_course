@@ -3,7 +3,8 @@
 using namespace std;
 
 int main(){
-    double s, p, n, m;
+    double s, p, n;
+    long double m;
     cout<<"s = ";
     cin>>s;
     cout<<"p = ";
@@ -19,8 +20,12 @@ int main(){
     else{
         double r = p/100;
         m = (s*r*pow((1+r), n))/(12*(pow(1+r, n)-1));
+
     }
-    cout<<"m = "<<m;
+    if (isnan(m))
+        cout<<"The number is too big";
+    else
+        cout<<"m = "<<m;
     return 0;
 
 }
