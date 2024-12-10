@@ -9,7 +9,7 @@ int main(){
     int sz = abc.length();
     for(int i = 0; i < sz; ++i){
         int pos = i;
-        for(int j = i+i; j < sz; ++j){
+        for(int j = i+1; j < sz; ++j){
             if (int(abc[pos]) >= int(abc[j]))
                 pos = j;
         }

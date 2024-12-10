@@ -7,37 +7,39 @@ using namespace std;
 #define SQUARE 1
 #define POLYGON 2
 #define CIRCLE 3
-bool check(int n){
-    if (n > 0)
-        return true;
-    return false; 
-}
+
 double polygon(){
-    double a, h;
+    double a, h, s;
     cout<<"a = ";
     cin>>a;
     cout<<"h = ";
     cin>>h;
-    double s = (a*h)/2;
+    if (a > 0 && h > 0)
+        s = (a*h)/2;
+    else
+        return -1;
     return s;
 }
 double square(){
-    double a, b;
+    double a, b, s;
     cout<<"a = ";
     cin>>a;
     cout<<"b = ";
     cin>>b;
-    double s = a*b;
+    if (a > 0 && b > 0)
+        s = a*b;
+    else
+        return -1; 
     return s;
 }
 double circle(){
     double R, s;
     cout<<"R = ";
     cin>>R;
-    if (check(R))
+    if (R > 0)
         s = M_PI*R*R;
     else
-        s = -1;
+        return -1;
     return s;
 }
 int main(){
@@ -50,22 +52,20 @@ int main(){
     {
     case SQUARE:
         res = square();
-        if (res != -1)
-            cout<<"res = "<<res;
-        else
-            cout<<"Ошибка";
         break;
     case POLYGON:
         res = polygon();
-        cout<<"res = "<<res;
         break;
     case CIRCLE:
         res = circle();
-        cout<<"res = "<<res;
         break;
     default:
         cout<<"You entered an incorrect value";
         break;
     }
+    if (res != -1)
+        cout<<"res = "<<res;
+    else
+        cout<<"You entered an incorrect value";
     return 0;
 }

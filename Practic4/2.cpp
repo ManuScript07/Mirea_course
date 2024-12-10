@@ -11,8 +11,9 @@ int sign(double x){
 int main(){
     cout<<"Введите число: ";
     double n;
-    cin>>n;
-    int s = sign(n);
-    cout<<s;
+    if (cin>>n)
+        cout<<sign(n);
+    else
+        cout<<"Некорректные данные";
     return 0;
 }
